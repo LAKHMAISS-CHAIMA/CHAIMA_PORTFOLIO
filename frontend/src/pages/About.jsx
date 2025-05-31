@@ -1,19 +1,37 @@
 import React from 'react';
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="max-w-3xl mx-auto text-center px-4 py-10 animate-fade-in">
-      <h2 className="text-3xl md:text-4xl font-bold text-blue-700 dark:text-blue-300 mb-6">
-        About Me
-      </h2>
-      
-      <p className="text-gray-700 dark:text-gray-300 text-lg mb-4 leading-relaxed">
-        I'm a <strong className="text-blue-600 dark:text-blue-400">Full Stack JavaScript Developer</strong> and a passionate tech student. I love crafting modern web applications using technologies like <strong>React</strong>, <strong>Node.js</strong>, and <strong>MongoDB</strong>.
-      </p>
-      
-      <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-        Curious and creative by nature, I thrive on learning and experimenting with new ideas. Whether working on personal projects or collaborating with a team, my goal is to create meaningful user experiences and make an impact through clean, efficient code.
-      </p>
-    </section>
+     <motion.div 
+          className="flex-1 space-y-6"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-3xl font-bold text-amber-600">About me</h3>
+          <p className="text-lg text-slate-700 leading-relaxed">
+            I'm a full stack JavaScript developer and a passionate tech student.
+            I enjoy building modern web apps using React, Node.js, and MongoDB.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed">
+            Driven by curiosity and creativity, I'm always learning,
+            experimenting, and growing as a developer. Looking for
+            opportunities to build real-world projects, collaborate, and make an
+            impact through code.
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+            {['React', 'Node.js', 'MongoDB', 'TypeScript', 'Express', 'Next.js'].map((skill) => (
+              <div 
+                key={skill}
+                className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-center"
+              >
+                <span className="text-slate-700 font-medium">{skill}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
   );
 }

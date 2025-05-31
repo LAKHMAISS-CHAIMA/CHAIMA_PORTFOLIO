@@ -29,7 +29,7 @@ export default function Experience() {
             >
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-                  {exp.role} <span className="text-lime-600"> @ {exp.company}</span>
+                  {exp.role} <span className="text-amber-600"> @ {exp.company}</span>
                 </h3>
                 <span className="text-sm text-gray-500 dark:text-gray-400">{exp.period}</span>
               </div>

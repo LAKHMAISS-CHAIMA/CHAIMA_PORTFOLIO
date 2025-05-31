@@ -7,11 +7,13 @@ import Certificat from './pages/Certificat'
 import Experience from './pages/Experience'
 import Project from './pages/Project'
 import ThemeToggle from './components/ThemeToggle'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <Navbar />
+      <ScrollToTop />
       <div className="fixed top-4 right-4 z-50">
         <ThemeToggle />
       </div>
