@@ -19,5 +19,5 @@ COPY . .
 # Expose port
 EXPOSE 5000
 
-# Start the application with PM2
-CMD ["pm2-runtime", "start", "server.js"]
+# Start the application with npm
+CMD ["npm", "start"]

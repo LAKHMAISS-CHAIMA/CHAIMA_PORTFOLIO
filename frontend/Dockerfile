@@ -1,5 +1,5 @@
 # Build stage
-FROM node:18-alpine as build
+FROM node:18-alpine
 
 WORKDIR /app
 
@@ -14,6 +14,10 @@ COPY . .
 
 # Build the application
 RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
 
 # Production stage
 FROM nginx:alpine
